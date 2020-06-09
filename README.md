@@ -17,7 +17,6 @@ First [enable Google Drive API on your google account](https://developers.google
 ```python
 from cd_drive import Drive
 
-
 # Perform oAuth flow to authorize application
 drive = Drive('path/to/credentials.json')
 
