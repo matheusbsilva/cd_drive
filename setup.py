@@ -2,15 +2,11 @@ import codecs
 import re
 from setuptools import setup
 from setuptools import find_packages
-from pip._internal.req import parse_requirements
 
 __version__ = re.findall('__version__ = "(.*)"',
                          open('cd_drive/__init__.py').read())[0]
 
-INSTALL_REQS = parse_requirements('requirements.txt', session='hack')
-REQUIREMENTS = [str(ir.req) for ir in INSTALL_REQS]
-
-print(REQUIREMENTS)
+REQUIREMENTS = codecs.open('requirements.txt', 'r', 'utf8').read().split('\n')[:-1]
 
 setup(
     name='cd_drive',
