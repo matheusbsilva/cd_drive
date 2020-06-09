@@ -24,6 +24,10 @@ class Drive:
         self.service = self.auth()
 
     def auth(self):
+        """
+        Perform oAuth flow and store temporary token on a pickle file
+        """
+
         if os.path.exists(self.token_file):
             with open(self.token_file, 'rb') as token:
                 self.creds = pickle.load(token)
@@ -45,9 +49,12 @@ class Drive:
         return service
 
     def cd(self, path):
-        folders = [path]
         current_dir_id = None
 
+        if path.endswith('/'):
+            path = path[:-1]
+
+        folders = [path]
         if '/' in path:
             folders = path.split('/')
 
