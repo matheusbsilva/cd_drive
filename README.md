@@ -7,7 +7,7 @@ cd Drive is a wrapper of google-api-python-client that make it easier to manipul
 You can install cd_drive using `pip`:
 
 ```
-pip install cd_drive
+pip install cd-drive
 ```
 
 # Usage
