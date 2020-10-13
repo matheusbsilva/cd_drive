@@ -26,7 +26,7 @@ drive.cd('Images/')
 # Read file from Google Drive at the current dir
 img = drive.read('photo.png')
 
-# Write file on Google Drive at the current dir
-drive.write('new-photo.png')
+# Write file from local dir to Google Drive at the current dir
+drive.write('new-photo.png', 'image/png', './new-photo.png')
 ```
 
