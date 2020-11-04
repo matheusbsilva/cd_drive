@@ -119,7 +119,9 @@ class Drive:
         return fh
 
     def write(self, filename, mimetype, filepath=None, buff=None):
-        file_metadata = {'name': filename, "parents": [self.current_dir_id]}
+        file_metadata = {'name': filename }
+        if self.current_dir_id:
+            file_metadata["parents"] = [self.current_dir_id]
 
         if buff:
             media = MediaIoBaseUpload(buff, mimetype=mimetype, resumable=True)
